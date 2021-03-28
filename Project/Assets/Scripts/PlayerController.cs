@@ -6,6 +6,9 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerController : MonoBehaviour
 {
+    //Interaction data, public, to be set in Unity editor
+    public InteractionInputData interaction;
+
     //Character controller for movement, collision
     private CharacterController cc;
 
@@ -26,6 +29,9 @@ public class PlayerController : MonoBehaviour
         //Get the character controller and camera
         cc = GetComponent<CharacterController>();
         cameraObject = Camera.main.gameObject;
+
+        //Set up interaction scriptable object
+        interaction.Reset();
     }
 
     //Event handlers for input
@@ -41,9 +47,28 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(CallbackContext context)
     {
-        clicked = context.ReadValueAsButton();
+        bool data = context.ReadValueAsButton();
 
-        //TODO: Implement interaction
+        //Only go on when the button press/click begins
+        if (data && !clicked)
+        {
+            interaction.p_interactPress = true;
+            Debug.Log("Clicked");
+            StartCoroutine(InteractDelay());
+        }
+
+        //Track whether button is pressed or not
+        clicked = data;
+    }
+
+    public IEnumerator InteractDelay()
+    {
+        //Wait one frame
+        yield return null;
+
+        //Reset interaction
+        interaction.p_interactPress = false;
+        Debug.Log("Reset");
     }
 
     void Update()
