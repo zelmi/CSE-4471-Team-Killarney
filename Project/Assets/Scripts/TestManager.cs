@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 public class TestManager : MonoBehaviour
 {
@@ -14,12 +14,12 @@ public class TestManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Keyboard.current.pKey.wasPressedThisFrame)
         {
             PuzzleSceneManager.SwitchToPuzzle("TestPuzzle");
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Keyboard.current.eKey.wasPressedThisFrame)
         {
             PuzzleSceneManager.ExitPuzzle();
         }
