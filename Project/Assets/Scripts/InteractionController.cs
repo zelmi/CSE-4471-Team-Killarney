@@ -13,7 +13,7 @@ public class InteractionController : MonoBehaviour
     [Header("Ray Settings")]
     [SerializeField] private float rayDistance;
     [SerializeField] private float rayRadius;
-    [SerializeField] private LayerMask interactableLayer;
+    //[SerializeField] private LayerMask interactableLayer;
     
     private Camera p_cam;
     private bool p_interacting;
@@ -32,7 +32,7 @@ public class InteractionController : MonoBehaviour
         Ray _ray = new Ray(p_cam.transform.position,p_cam.transform.forward);
         RaycastHit hitInfo;
 
-        bool hit = Physics.SphereCast(_ray, rayRadius, out hitInfo, rayDistance, interactableLayer);
+        bool hit = Physics.SphereCast(_ray, rayRadius, out hitInfo, rayDistance);//, interactableLayer);
 
         if(hit){
             IInteractable _interactable = hitInfo.transform.GetComponent<IInteractable>();
@@ -59,5 +59,7 @@ public class InteractionController : MonoBehaviour
                 }
             }
         }
+
+        interactionInputData.Reset();
     }
 }
