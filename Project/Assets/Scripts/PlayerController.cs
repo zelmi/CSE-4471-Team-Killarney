@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private bool clicked;
 
     //Settings for move speed and camera sensitivity, public to allow changing in Unity
-    public float speed = 0.5f;
+    public float speed = 50f;
     public float cameraSensititivity = 10;
 
     void Start()
