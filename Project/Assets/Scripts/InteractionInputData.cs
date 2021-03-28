@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "InteractionInputData", menuName = "Interactions/InputData")]
 public class InteractionInputData : ScriptableObject
 {
-    private bool p_interactPress;
+    public bool p_interactPress;
     //private bool p_interactRelease;
 
     public bool InteractPress {

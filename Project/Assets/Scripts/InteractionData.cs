@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "InteractionData", menuName = "Interactions/InteractionData")]
+
 public class InteractionData : ScriptableObject {
     private IInteractable p_interactObj;
 

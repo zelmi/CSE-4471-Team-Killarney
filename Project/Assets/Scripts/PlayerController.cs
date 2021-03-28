@@ -6,6 +6,9 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerController : MonoBehaviour
 {
+    //Interaction data, public, to be set in Unity editor
+    public InteractionInputData interaction;
+
     //Character controller for movement, collision
     private CharacterController cc;
 
@@ -21,11 +24,17 @@ public class PlayerController : MonoBehaviour
     public float speed = 50f;
     public float cameraSensititivity = 10;
 
+    //Setting for gravity
+    public float gravity = -10;
+
     void Start()
     {
         //Get the character controller and camera
         cc = GetComponent<CharacterController>();
         cameraObject = Camera.main.gameObject;
+
+        //Set up interaction scriptable object
+        interaction.Reset();
     }
 
     //Event handlers for input
@@ -41,9 +50,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(CallbackContext context)
     {
-        clicked = context.ReadValueAsButton();
+        bool data = context.ReadValueAsButton();
 
-        //TODO: Implement interaction
+        //Only go on when the button press/click begins
+        if (data && !clicked)
+        {
+            interaction.p_interactPress = true;
+        }
+
+        //Track whether button is pressed or not
+        clicked = data;
     }
 
     void Update()
@@ -66,6 +82,7 @@ public class PlayerController : MonoBehaviour
 
         //Applying movement
         Vector3 movementDelta = new Vector3(movementVector.x, 0, movementVector.y) * Time.deltaTime * speed;
+        movementDelta += new Vector3(0, gravity, 0) * Time.deltaTime;
         movementDelta = transform.TransformDirection(movementDelta);
         cc.Move(movementDelta * 0.1f);
     }
