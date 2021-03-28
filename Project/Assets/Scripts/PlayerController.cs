@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public float speed = 50f;
     public float cameraSensititivity = 10;
 
+    //Setting for gravity
+    public float gravity = -10;
+
     void Start()
     {
         //Get the character controller and camera
@@ -79,6 +82,7 @@ public class PlayerController : MonoBehaviour
 
         //Applying movement
         Vector3 movementDelta = new Vector3(movementVector.x, 0, movementVector.y) * Time.deltaTime * speed;
+        movementDelta += new Vector3(0, gravity, 0) * Time.deltaTime;
         movementDelta = transform.TransformDirection(movementDelta);
         cc.Move(movementDelta * 0.1f);
     }
