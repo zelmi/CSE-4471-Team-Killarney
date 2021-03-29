@@ -67,4 +67,8 @@ public class PuzzleSceneManager
         //TODO: will need to enable the player in the main scene. Player not implemented yet
         camera.SetActive(true);
     }
+
+    public static void QuitGame() {
+        Application.Quit();
+    }
 }

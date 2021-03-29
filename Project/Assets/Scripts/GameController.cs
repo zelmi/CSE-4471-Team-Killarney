@@ -40,12 +40,15 @@ public class GameController : MonoBehaviour
     private bool alarmCountdownInitiated;
 
     public Timer timer;
+    public Text timeText;
 
 
     // Start is called before the first frame update
     void Start()
     {
         // timer = gameObject.AddComponent(typeof(Timer)) as Timer; 
+        timer = new Timer(1800);
+        timeText =  GetComponent<Text>();
         Inventory = gameObject.AddComponent(typeof(Inventory)) as Inventory; 
         PostItPuzzle = false;
         UnlockStorageRoomPuzzle = false;
@@ -57,17 +60,52 @@ public class GameController : MonoBehaviour
         VirusDisablesProtectionPuzzle = false;
         DDoSPuzzle = false;
         alarmCountdownInitiated = false;
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer.UpdateTime();
+        // DisplayTime(timer.TimeRemaining);
+        if (timer.TimeRemaining <= 0) {
+            //Lose State 
+            ActivateLoseState();
+        }
         if (!alarmCountdownInitiated) {
             if (VirusDisablesProtectionPuzzle && DisableManagersSeecurityProtectionPuzzle) {
                 // 5 minutes
-                // timer.TimeRemaining = 300;
+                timer = new Timer(300);
+            }
+            if (DDoSPuzzle) {
+                ActivateWinState();
             }
         }
+    }
+
+    private void ActivateLoseState() {
+        PuzzleSceneManager.SwitchToPuzzle("LoseScene");
+    }
+
+    private void ActivateWinState() {
+        PuzzleSceneManager.SwitchToPuzzle("WinScene");
+    }
+
+    private void DisplayTime(float timeToDisplay) {
+        timeToDisplay += 1;
+
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+
+        // timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void StartGame() {
+        //Main room
+        PuzzleSceneManager.SwitchToPuzzle("GameScene");
+        timer = new Timer(1800);
+    }
+
+    public void QuitGame() {
+        PuzzleSceneManager.QuitGame();
     }
 }

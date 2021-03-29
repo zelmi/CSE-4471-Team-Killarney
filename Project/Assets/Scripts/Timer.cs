@@ -3,28 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+// static timer class
+public class Timer
 {
-    //30 minutes
     public float TimeRemaining {get; set;}
     public bool timerIsRunning = false;
     public Text timeText;
 
-    private void Start()
+
+    public Timer(int startTime) {
+        // Starts the timer automatically
+        timerIsRunning = true;
+        //30 minutes
+        TimeRemaining = startTime;
+    }
+
+    public void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
+        //30 minutes
         TimeRemaining = 1800;
     }
 
-    void Update()
+    public void UpdateTime()
     {
         if (timerIsRunning)
         {
             if (TimeRemaining > 0)
             {
                 TimeRemaining -= Time.deltaTime;
-                DisplayTime(TimeRemaining);
             }
             else
             {
@@ -33,10 +41,9 @@ public class Timer : MonoBehaviour
                 timerIsRunning = false;
             }
         }
-        Debug.Log(TimeRemaining);
     }
 
-    void DisplayTime(float timeToDisplay)
+    public void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
 
