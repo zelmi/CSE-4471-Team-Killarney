@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class Puzzle6Manager : MonoBehaviour
 {
+    //Send button
+    public Button sendButton;
+
     //Input fields
     public TMP_InputField toField;
     public TMP_InputField subjectField;
@@ -72,6 +76,18 @@ public class Puzzle6Manager : MonoBehaviour
         } else
         {
             Debug.Log("Failure");
+        }
+    }
+
+    void Update()
+    {
+        //Enable button if all fields have text
+        if (toField.text != "" && subjectField.text != "" && messageField.text != "")
+        {
+            sendButton.interactable = true;
+        } else
+        {
+            sendButton.interactable = false;
         }
     }
 }
