@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
+
         // timer = gameObject.AddComponent(typeof(Timer)) as Timer; 
         timer = new Timer(1800);
         timeText =  GetComponent<Text>();
@@ -83,11 +85,11 @@ public class GameController : MonoBehaviour
     }
 
     private void ActivateLoseState() {
-        PuzzleSceneManager.SwitchToPuzzle("LoseScene");
+        PuzzleSceneManager.SceneSwitch("LoseScene");
     }
 
     private void ActivateWinState() {
-        PuzzleSceneManager.SwitchToPuzzle("WinScene");
+        PuzzleSceneManager.SceneSwitch("WinScene");
     }
 
     private void DisplayTime(float timeToDisplay) {
@@ -101,7 +103,7 @@ public class GameController : MonoBehaviour
 
     public void StartGame() {
         //Main room
-        PuzzleSceneManager.SwitchToPuzzle("GameScene");
+        PuzzleSceneManager.SceneSwitch("GameScene");
         timer = new Timer(1800);
     }
 

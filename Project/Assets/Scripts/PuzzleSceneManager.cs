@@ -15,6 +15,14 @@ public class PuzzleSceneManager
     private static GameObject camera;
     private static GameObject player;
 
+    //Switching non-puzzle scenes
+    public static void SceneSwitch(string scene)
+    {
+        SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
+
+        sceneString = scene;
+    }
+
     //Switches to the puzzle scene specified
     public static void SwitchToPuzzle(string scene)
     {
@@ -35,7 +43,7 @@ public class PuzzleSceneManager
             AsyncOperation operation = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
 
             //Only unload after the new scene completes loading, need to pass new scene string
-            operation.completed += sender => PuzzleSwitch(sender, scene);
+            operation.completed += sender => PuzzleSwitch(scene);
             operation.allowSceneActivation = true;
 
             inPuzzle = true;
@@ -63,7 +71,7 @@ public class PuzzleSceneManager
     }
 
     //Event handler for switching puzzles
-    private static void PuzzleSwitch(AsyncOperation operation, string scene)
+    private static void PuzzleSwitch(string scene)
     {
         //Only unload previous puzzle once game loads the new one
         SceneManager.UnloadSceneAsync(sceneString);
@@ -83,6 +91,7 @@ public class PuzzleSceneManager
 
         //Camera is a child of the player, will be disabled and enabled as a side effect of the player
         player.SetActive(false);
+        
     }
 
     //Unpauses current scene
