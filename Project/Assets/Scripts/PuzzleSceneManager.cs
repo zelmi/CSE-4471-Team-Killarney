@@ -89,8 +89,12 @@ public class PuzzleSceneManager
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
-        //Camera is a child of the player, will be disabled and enabled as a side effect of the player
-        player.SetActive(false);
+        //Player should be set to something, just a sanity check
+        if (player != null)
+        {
+            //Camera is a child of the player, will be disabled and enabled as a side effect of the player
+            player.SetActive(false);
+        }
         
     }
 
@@ -103,8 +107,12 @@ public class PuzzleSceneManager
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
-        //Camera is a child of the player, will be disabled and enabled as a side effect of the player
-        player.SetActive(true);
+        //Player should be set to something, just a sanity check
+        if (player != null)
+        {
+            //Camera is a child of the player, will be disabled and enabled as a side effect of the player
+            player.SetActive(true);
+        }
     }
 
     public static void QuitGame() {

@@ -16,7 +16,7 @@ public class TestManager : MonoBehaviour
     {
         if (Keyboard.current.pKey.wasPressedThisFrame)
         {
-            PuzzleSceneManager.SwitchToPuzzle("TestPuzzle");
+            PuzzleSceneManager.SwitchToPuzzle("1.EmailLogin");
         }
         if (Keyboard.current.oKey.wasPressedThisFrame)
         {

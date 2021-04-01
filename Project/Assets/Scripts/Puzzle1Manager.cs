@@ -21,8 +21,8 @@ public class Puzzle1Manager : MonoBehaviour
             //Disable interaction
             password.interactable = false;
 
-            //Debug print for now, tie to puzzle 6 later
-            Debug.Log("Correct password");
+            //Go to email puzzle
+            PuzzleSceneManager.SwitchToPuzzle("6.PhishingEmail");
         }
     }
 }
