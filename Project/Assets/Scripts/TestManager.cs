@@ -18,7 +18,10 @@ public class TestManager : MonoBehaviour
         {
             PuzzleSceneManager.SwitchToPuzzle("TestPuzzle");
         }
-
+        if (Keyboard.current.oKey.wasPressedThisFrame)
+        {
+            PuzzleSceneManager.SwitchToPuzzle("TestPuzzle2");
+        }
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
             PuzzleSceneManager.ExitPuzzle();

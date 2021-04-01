@@ -13,11 +13,12 @@ public class PuzzleSceneManager
     private static string sceneString;
 
     private static GameObject camera;
+    private static GameObject player;
 
     //Switches to the puzzle scene specified
     public static void SwitchToPuzzle(string scene)
     {
-        //Sanity check that we are not trying to enter a puzzle from a puzzle
+        //Entering puzzle from main scene
         if (!inPuzzle)
         {
             PauseScene();
@@ -27,6 +28,16 @@ public class PuzzleSceneManager
             operation.allowSceneActivation = true;
 
             sceneString = scene;
+            inPuzzle = true;
+        } else //Entering puzzle from a puzzle
+        {
+            //Additive to keep the previous scene loaded
+            AsyncOperation operation = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
+
+            //Only unload after the new scene completes loading, need to pass new scene string
+            operation.completed += sender => PuzzleSwitch(sender, scene);
+            operation.allowSceneActivation = true;
+
             inPuzzle = true;
         }
     }
@@ -51,21 +62,40 @@ public class PuzzleSceneManager
         UnPauseScene();
     }
 
-    //TODO: Depending on player implementation, these two methods might be able to be combined
+    //Event handler for switching puzzles
+    private static void PuzzleSwitch(AsyncOperation operation, string scene)
+    {
+        //Only unload previous puzzle once game loads the new one
+        SceneManager.UnloadSceneAsync(sceneString);
+
+        //Only set new scene string after the old one is used for unloaded
+        sceneString = scene;
+    }
 
     //Pauses current scene
     private static void PauseScene()
     {
-        //TODO: will need to disable the player in the main scene. Player not implemented yet
-        camera = Camera.main.gameObject;
-        camera.SetActive(false);
+        //Should run only once when pause is first used
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        //Camera is a child of the player, will be disabled and enabled as a side effect of the player
+        player.SetActive(false);
     }
 
     //Unpauses current scene
     private static void UnPauseScene()
     {
-        //TODO: will need to enable the player in the main scene. Player not implemented yet
-        camera.SetActive(true);
+        //Should never run, should have already been set by pause, but here for sanity checking
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        //Camera is a child of the player, will be disabled and enabled as a side effect of the player
+        player.SetActive(true);
     }
 
     public static void QuitGame() {
