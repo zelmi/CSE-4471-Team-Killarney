@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseScene.unity
     guid: 31780849b4f0046509a36e69e07a9098
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/TestMainScene.unity
+    guid: 7f38576e3dbb92a4c9626735773753c2
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/TestPuzzle.unity
+    guid: b37b148aa078f9548b1abd5dcc823bec
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/TestPuzzle2.unity
+    guid: 10fbb84dd56830f438d91cd5fa9a32b5
   m_configObjects: {}
