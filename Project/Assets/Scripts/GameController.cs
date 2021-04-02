@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         timer.UpdateTime();
-        // DisplayTime(timer.TimeRemaining);
+        DisplayTime(timer.TimeRemaining);
         if (timer.TimeRemaining <= 0) {
             //Lose State 
             ActivateLoseState();
