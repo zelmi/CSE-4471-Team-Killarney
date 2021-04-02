@@ -29,4 +29,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/6.PhishingEmail.unity
     guid: a05b1bab7d48340d490cbd0cc6b9a950
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/PasswordScene.unity
+    guid: a2fd043fb41484f27ad0c1fadc94509f
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/ShutdownSecurityScene.unity
+    guid: 8327c473b135649b8b86c3586d6a083f
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/DecryptedSSLScene.unity
+    guid: 8008278d0a0d64c1a930cbfa0d69f222
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/3.SSLstrip.unity
+    guid: 2081d180577fb4f208443676f5e4684c
   m_configObjects: {}

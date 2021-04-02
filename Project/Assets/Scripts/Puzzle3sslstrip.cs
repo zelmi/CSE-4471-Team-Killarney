@@ -52,4 +52,8 @@ public class Puzzle3sslstrip : MonoBehaviour
         wrongCommand2.SetActive (false);
         canvas3.SetActive (true);
     }
+
+    public void OnClickCompleteProcess() {
+        PuzzleSceneManager.SceneSwitch("DecryptedSSLScene");
+    }
 }
