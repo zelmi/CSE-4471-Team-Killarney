@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<emaildata>
+    <category type="inbox">
+        <message senderOrRecipient="Row, Jane" subject="Time Off Request" time="12:57am" text="Hello Alice, ~~I am writing to request to take the day off next Friday. My son will be performing in his school play and my husband and I want to be there to support him.~~Best, Jane"/>
+        <message senderOrRecipient="Doe, John" subject="When is meeting?" time="11:34am" text="What time is the department meeting today?~~-John"/>
+    </category>
+    <category type="sent">
+        <message senderOrRecipient="Doe, John" subject="RE: When is meeting?" time="11:56am" text="The meeting is at 3, don't be late~~Best,~Alice"/>
+    </category>
+    <category type="spam">
+        <message senderOrRecipient="Prince of nigeria" subject="Need yuor asisstanc" time="5:23pm" text="Hello sir,~I am prinxe of nigeria and i need your help to move 12 million of Diamonds to Amerrica. There willl be of no risk to you or yuor family and return i pay you 2.4 million dollor. pleaze repond soon~~~~prinze ibbrahim"/>
+        <message senderOrRecipient="AAA Lottery" subject="Congratulations!" time="2:30pm" text="Congratulations!~~You have won our jackpot drawing of 1 MILLION DOLLARS!~~In order to claim your prize, please provide your name, address, and bank account number so we can promptly deliver your winnings~~AAA Lottery Group"/>
+    </category>
+    <category type="trash">
+        <message senderOrRecipient="IT-no-reply" subject="Ticket Complete" time="8:21am" text="Your support ticket #8166548: Password reset has been marked complete.~~If your problem has not been resolved to your satisfaction, please reopen your ticket. Otherwise, you do not need to respond~~B Company IT Department"/>
+    </category>
+
+</emaildata>
