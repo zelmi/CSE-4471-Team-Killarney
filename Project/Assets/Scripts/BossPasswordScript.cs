@@ -26,7 +26,7 @@ public class BossPasswordScript : MonoBehaviour
             password.interactable = false;
 
             //Go to email puzzle
-            PuzzleSceneManager.SceneSwitch("ShutdownSecurityScene");
+            PuzzleSceneManager.SwitchToPuzzle("ShutdownSecurityScene");
         }
         password.text = "";
     }

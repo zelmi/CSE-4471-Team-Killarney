@@ -37,7 +37,7 @@ public class InteractionController : MonoBehaviour
         if(hit){
             IInteractable _interactable = hitInfo.transform.GetComponent<IInteractable>();
 
-            if(_interactable != null){
+            if(_interactable != null && _interactable.IsInteractable){
                 if(interactionData.IsEmpty() || !interactionData.IsSameObj(_interactable)){
                     interactionData.Interactable = _interactable;
                     hoverUIController.SetHoverMessage(interactionData.Interactable.HoverMessage);
