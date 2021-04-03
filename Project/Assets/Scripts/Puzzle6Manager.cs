@@ -5,28 +5,23 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 using System.Xml;
+using System.Xml.Serialization;
+using Assets.Scripts;
+using System.IO;
 
 public class Puzzle6Manager : MonoBehaviour
 {
-    public class Message {
-        public string senderOrRecipient;
-        public string subject;
-        public string time;
-        public string text;
+    //Game controller object
+    private GameObject gameController;
 
-        public Message(string senderOrRecipient, string subject, string time, string text)
-        {
-            this.senderOrRecipient = senderOrRecipient;
-            this.subject = subject;
-            this.time = time;
-            this.text = text;
-        }
-    }
+    //Response from phishing target
+    private EmailInbox.Message phishingResponse;
+
     //Message data
-    private List<Message> inboxData;
-    private List<Message> sentData;
-    private List<Message> spamData;
-    private List<Message> trashData;
+    public EmailInbox inboxData;
+    public EmailInbox sentData;
+    public EmailInbox spamData;
+    public EmailInbox trashData;
 
     //Send button
     public Button sendButton;
@@ -55,21 +50,28 @@ public class Puzzle6Manager : MonoBehaviour
 
     void Start()
     {
+        //Get the game controller
+        gameController = GameObject.FindGameObjectWithTag("GameController");
+
         InitializeMessages();
     }
 
+    //Event handler for closing email
     public void OnClickEmailClose()
     {
         emailMessageText.SetActive(false);
     }
+
+    //Event handler for closing compose window
     public void OnClickComposeClose()
     {
         emailComposeWindow.SetActive(false);
     }
 
+    //Event handler for opening inboxes
     public void OnClickEmailCategory(string type)
     {
-        List<Message> currentData = inboxData;
+        EmailInbox currentData = inboxData;
 
         switch (type)
         {
@@ -87,7 +89,8 @@ public class Puzzle6Manager : MonoBehaviour
         InstantiateMessages(currentData);
     }
 
-    public void EmailItemEvent(List<Message> sourceList, int index)
+    //Event handler for opening an email
+    public void EmailItemEvent(EmailInbox sourceList, int index)
     {
         emailMessageText.SetActive(true);
 
@@ -95,19 +98,20 @@ public class Puzzle6Manager : MonoBehaviour
         if (sourceList == sentData)
         {
             emailMessageText.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = "hr.alice@bmail.com";
-            emailMessageText.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = sourceList[index].senderOrRecipient;
+            emailMessageText.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = sourceList.messageList[index].senderOrRecipient;
 
         } else
         {
-            emailMessageText.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = sourceList[index].senderOrRecipient;
+            emailMessageText.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = sourceList.messageList[index].senderOrRecipient;
             emailMessageText.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = "hr.alice@bmail.com";
         }
 
-        emailMessageText.transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = sourceList[index].subject;
-        emailMessageText.transform.GetChild(3).GetChild(0).GetComponent<TMP_Text>().text = sourceList[index].text.Replace("~", Environment.NewLine);
+        emailMessageText.transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = sourceList.messageList[index].subject;
+        emailMessageText.transform.GetChild(3).GetChild(0).GetComponent<TMP_Text>().text = sourceList.messageList[index].text.Replace("~", Environment.NewLine);
     }
 
-    void InstantiateMessages(List<Message> messageList)
+    //Populate message list with messages
+    void InstantiateMessages(EmailInbox messageList)
     {
         //Clear list
         for(int i = 0; i < emailMessageList.transform.childCount; i++)
@@ -115,78 +119,67 @@ public class Puzzle6Manager : MonoBehaviour
             Destroy(emailMessageList.transform.GetChild(i).gameObject);
         }
 
-        for (int i = 0; i < messageList.Count; i++)
+        //Add messages
+        for (int i = 0; i < messageList.messageList.Count; i++)
         {
             GameObject messageObj = Instantiate(message, emailMessageList.transform);
             messageObj.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -47 - 20 * i, 0);
-            messageObj.transform.GetChild(0).GetComponent<TMP_Text>().SetText(messageList[i].senderOrRecipient);
-            messageObj.transform.GetChild(1).GetComponent<TMP_Text>().SetText(messageList[i].subject);
-            messageObj.transform.GetChild(2).GetComponent<TMP_Text>().SetText(messageList[i].time);
+            messageObj.transform.GetChild(0).GetComponent<TMP_Text>().SetText(messageList.messageList[i].senderOrRecipient);
+            messageObj.transform.GetChild(1).GetComponent<TMP_Text>().SetText(messageList.messageList[i].subject);
+            messageObj.transform.GetChild(2).GetComponent<TMP_Text>().SetText(messageList.messageList[i].time);
 
             //Must make a copy of i, else the EmailItemEvent will break
             int index = i;
             messageObj.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => EmailItemEvent(messageList, index));
         }
     }
-    async void InitializeMessages()
+
+    //Load messages from data into EmailInboxes
+    void InitializeMessages()
     {
-        inboxData = new List<Message>();
-        sentData = new List<Message>();
-        spamData = new List<Message>();
-        trashData = new List<Message>();
+        //Inbox
+        XmlSerializer serialize = new XmlSerializer(typeof(EmailInbox));
+        FileStream file = new FileStream("Assets/Data/inbox.xml", FileMode.Open);
+        inboxData = (EmailInbox)serialize.Deserialize(file);
 
-        XmlReaderSettings settings = new XmlReaderSettings();
-        settings.Async = true;
-
-        List<Message> currentData = inboxData;
-
-        //Forward only, that is, depth first
-        using (XmlReader reader = XmlReader.Create("Assets/Data/emailData.xml", settings))
+        //Sent
+        file = new FileStream("Assets/Data/sent.xml", FileMode.Open);
+        
+        //If there is new sent data, then use that instead
+        if (File.Exists("Assets/Data/newsent.xml"))
         {
-            while (await reader.ReadAsync())
-            {
-                if (reader.NodeType == XmlNodeType.Element)
-                {
-                    switch (reader.Name)
-                    {
-                        case "category":
-                            switch (reader.GetAttribute("type"))
-                            {
-                                case "inbox":
-                                    currentData = inboxData;
-                                    break;
-                                case "sent":
-                                    currentData = sentData;
-                                    break;
-                                case "spam":
-                                    currentData = spamData;
-                                    break;
-                                case "trash":
-                                    currentData = trashData;
-                                    break;
-                            }
-                            break;
-                        case "message":
-                            string senderOrRecipient = reader.GetAttribute("senderOrRecipient");
-                            string subject = reader.GetAttribute("subject");
-                            string time = reader.GetAttribute("time");
-                            string text = reader.GetAttribute("text");
+            file = new FileStream("Assets/Data/newsent.xml", FileMode.Open);
+        }
+        sentData = (EmailInbox)serialize.Deserialize(file);
 
-                            currentData.Add(new Message(senderOrRecipient, subject, time, text));
-                            break;
-                    }
-                }
+        //Spam
+        file = new FileStream("Assets/Data/spam.xml", FileMode.Open);
+        spamData = (EmailInbox)serialize.Deserialize(file);
+
+        //Trash
+        file = new FileStream("Assets/Data/trash.xml", FileMode.Open);
+        trashData = (EmailInbox)serialize.Deserialize(file);
+
+        //More sanity checking
+        if (gameController != null)
+        {
+            if (gameController.GetComponent<GameController>().PhishingResponse)
+            {
+                inboxData.messageList.Insert(0, phishingResponse);
             }
         }
 
-        //Default
+        //Default to inbox
         InstantiateMessages(inboxData);
     }
+
+    //Event handler for opening compose window
     public void OnClickCompose()
     {
         emailComposeWindow.SetActive(true);
     }
 
+    //Event handler for send
     public void OnClickSend()
     {
         //Sequentially check if any conditions failed
@@ -233,13 +226,29 @@ public class Puzzle6Manager : MonoBehaviour
             conditionsPassed = false;
         }
 
+        //Good email
         if (conditionsPassed)
         {
-            Debug.Log("Success");
-        } else
-        {
-            Debug.Log("Failure");
+            if(gameController != null)
+            {
+                gameController.GetComponent<GameController>().PhishingPuzzle = true;
+            }
         }
+
+        //Adding sent email to sent list
+        EmailInbox.Message newSent = new EmailInbox.Message(to, subject, GetTime(), message);
+        sentData.messageList.Insert(0, newSent);
+
+        //Serialize
+        XmlSerializer serializer = new XmlSerializer(typeof(EmailInbox));
+        TextWriter writer = new StreamWriter("Assets/Data/newsent.xml");
+        serializer.Serialize(writer, sentData);
+    }
+
+    //Gets the "current" time
+    string GetTime()
+    {
+        return "7:" + (29 + (int)(30 - gameController.GetComponent<GameController>().timer.TimeRemaining / 60));
     }
 
     void Update()

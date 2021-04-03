@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <emaildata>
     <category type="inbox">
-        <message senderOrRecipient="Row, Jane" subject="Time Off Request" time="12:57am" text="Hello Alice, ~~I am writing to request to take the day off next Friday. My son will be performing in his school play and my husband and I want to be there to support him.~~Best, Jane"/>
+        <message senderOrRecipient="Row, Jane" subject="Time Off Request" time="12:57pm" text="Hello Alice, ~~I am writing to request to take the day off next Friday. My son will be performing in his school play and my husband and I want to be there to support him.~~Best, Jane"/>
         <message senderOrRecipient="Doe, John" subject="When is meeting?" time="11:34am" text="What time is the department meeting today?~~-John"/>
     </category>
     <category type="sent">

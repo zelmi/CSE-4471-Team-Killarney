@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmailInbox xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <messageList>
+    <Message senderOrRecipient="Row, Jane" subject="Time Off Request" time="12:57pm" text="Hello Alice, ~~I am writing to request to take the day off next Friday. My son will be performing in his school play and my husband and I want to be there to support him.~~Best, Jane" />
+    <Message senderOrRecipient="Doe, John" subject="When is meeting?" time="11:34am" text="What time is the department meeting today?~~-John" />
+  </messageList>
+</EmailInbox>

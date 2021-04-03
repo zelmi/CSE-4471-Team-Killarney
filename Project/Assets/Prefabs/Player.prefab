@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction: {fileID: 11400000, guid: 4c1047e7fd69b83418bd48892f48c13c, type: 2}
   speed: 50
-  cameraSensititivity: 10
+  cameraSensititivity: 15
   gravity: -10
 --- !u!114 &4380521953224101783
 MonoBehaviour:
