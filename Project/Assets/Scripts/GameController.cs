@@ -37,6 +37,9 @@ public class GameController : MonoBehaviour
     //Dependent on puzzle 06
     public bool DDoSPuzzle {get; set;}
 
+    //Tracks whether the response to the phishing email from puzzle 6 has been sent
+    public bool PhishingResponse { get; set; }
+
     private bool alarmCountdownInitiated;
 
     public Timer timer;

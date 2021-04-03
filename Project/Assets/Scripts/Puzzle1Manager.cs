@@ -18,6 +18,15 @@ public class Puzzle1Manager : MonoBehaviour
     {
         if (email.text == expectedEmail && password.text == expectedPassword)
         {
+            GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+
+            //Sanity check, in real game should not be null, but could be null while we test puzzles individually
+            if (controller != null)
+            {
+                //Set main controller boolean true
+                controller.GetComponent<GameController>().PostItPuzzle = true;
+            }
+
             //Disable interaction
             password.interactable = false;
 

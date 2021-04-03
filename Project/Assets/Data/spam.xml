@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmailInbox xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <messageList>
+    <Message senderOrRecipient="Prince of nigeria" subject="Need yuor asisstanc" time="5:23pm" text="Hello sir,~I am prinxe of nigeria and i need your help to move 12 million of Diamonds to Amerrica. There willl be of no risk to you or yuor family and return i pay you 2.4 million dollor. pleaze repond soon~~~~prinze ibbrahim" />
+    <Message senderOrRecipient="AAA Lottery" subject="Congratulations!" time="2:30pm" text="Congratulations!~~You have won our jackpot drawing of 1 MILLION DOLLARS!~~In order to claim your prize, please provide your name, address, and bank account number so we can promptly deliver your winnings~~AAA Lottery Group" />
+  </messageList>
+</EmailInbox>

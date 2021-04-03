@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmailInbox xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <messageList>
+    <Message senderOrRecipient="IT-no-reply" subject="Ticket Complete" time="8:21am" text="Your support ticket #8166548: Password reset has been marked complete.~~If your problem has not been resolved to your satisfaction, please reopen your ticket. Otherwise, you do not need to respond~~B Company IT Department" />
+  </messageList>
+</EmailInbox>
