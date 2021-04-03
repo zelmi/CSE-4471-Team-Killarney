@@ -34,4 +34,10 @@ public class Puzzle1Manager : MonoBehaviour
             PuzzleSceneManager.SwitchToPuzzle("6.PhishingEmail");
         }
     }
+
+    //Closes the puzzle
+    public void OnClose()
+    {
+        PuzzleSceneManager.ExitPuzzle();
+    }
 }

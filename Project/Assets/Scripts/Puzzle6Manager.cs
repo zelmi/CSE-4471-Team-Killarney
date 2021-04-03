@@ -68,6 +68,12 @@ public class Puzzle6Manager : MonoBehaviour
         emailComposeWindow.SetActive(false);
     }
 
+    //Event handler for closing window
+    public void OnClose()
+    {
+        PuzzleSceneManager.ExitPuzzle();
+    }
+
     //Event handler for opening inboxes
     public void OnClickEmailCategory(string type)
     {
