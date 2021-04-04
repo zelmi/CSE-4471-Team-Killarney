@@ -101,6 +101,11 @@ public class GameController : MonoBehaviour
                 ActivateWinState();
             }
         }
+
+        if(Keyboard.current.spaceKey.isPressed)
+        {
+            ActivateWinState();
+        }
     }
 
     private void ActivateLoseState() {
@@ -116,6 +121,7 @@ public class GameController : MonoBehaviour
         if (!InWinState)
         {
             InWinState = true;
+            timer.timerIsRunning = false;
             timeText.transform.parent.gameObject.SetActive(false);
             PuzzleSceneManager.SceneSwitch("WinScene");
         }

@@ -12,6 +12,11 @@ public class GameControllerProxy : MonoBehaviour
         controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
+    public Timer GetTimer()
+    {
+        return controller.timer;
+    }
+
     public void StartGame()
     {
         //Just call the controller's method
