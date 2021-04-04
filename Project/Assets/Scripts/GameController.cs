@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -57,10 +58,15 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(timeText.transform.parent.gameObject);
 
         // timer = gameObject.AddComponent(typeof(Timer)) as Timer; 
-        timer = new Timer(10);
-        timer.timerIsRunning = false;
+        timer = new Timer(1800);
         //timeText =  GetComponent<Text>();
-        Inventory = gameObject.AddComponent(typeof(Inventory)) as Inventory; 
+        Inventory = gameObject.AddComponent(typeof(Inventory)) as Inventory;
+        ResetBooleans();
+    }
+
+    //Sets initial values for booleans
+    public void ResetBooleans()
+    {
         PostItPuzzle = false;
         UnlockStorageRoomPuzzle = false;
         SSLStripPuzzle = false;
@@ -74,6 +80,7 @@ public class GameController : MonoBehaviour
         PhishingResponse = false;
         InLoseState = false;
         InWinState = false;
+
     }
 
     // Update is called once per frame
@@ -127,7 +134,11 @@ public class GameController : MonoBehaviour
         //Main room
         PuzzleSceneManager.SceneSwitch("GameScene");
 
+        //Reset booleans
+        ResetBooleans();
+
         //Starting timer
+        timer.ResetTime();
         timeText.transform.parent.gameObject.SetActive(true);
         timer.timerIsRunning = true;
     }

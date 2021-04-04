@@ -1017,6 +1017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7596614866655592214, guid: 410a4729ac10d496cb118a620170bfdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     - target: {fileID: 7596614866655592215, guid: 410a4729ac10d496cb118a620170bfdc,
         type: 3}
       propertyPath: timeText
