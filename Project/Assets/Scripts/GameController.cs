@@ -43,6 +43,9 @@ public class GameController : MonoBehaviour
 
     private bool alarmCountdownInitiated;
 
+    private bool InLoseState;
+    private bool InWinState;
+
     public Timer timer;
     public TMP_Text timeText;
 
@@ -54,7 +57,8 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(timeText.transform.parent.gameObject);
 
         // timer = gameObject.AddComponent(typeof(Timer)) as Timer; 
-        timer = new Timer(1800);
+        timer = new Timer(10);
+        timer.timerIsRunning = false;
         //timeText =  GetComponent<Text>();
         Inventory = gameObject.AddComponent(typeof(Inventory)) as Inventory; 
         PostItPuzzle = false;
@@ -67,6 +71,9 @@ public class GameController : MonoBehaviour
         VirusDisablesProtectionPuzzle = false;
         DDoSPuzzle = false;
         alarmCountdownInitiated = false;
+        PhishingResponse = false;
+        InLoseState = false;
+        InWinState = false;
     }
 
     // Update is called once per frame
@@ -90,11 +97,21 @@ public class GameController : MonoBehaviour
     }
 
     private void ActivateLoseState() {
-        PuzzleSceneManager.SceneSwitch("LoseScene");
+        if (!InLoseState)
+        {
+            InLoseState = true;
+            timeText.transform.parent.gameObject.SetActive(false);
+            PuzzleSceneManager.SceneSwitch("LoseScene");
+        }
     }
 
     private void ActivateWinState() {
-        PuzzleSceneManager.SceneSwitch("WinScene");
+        if (!InWinState)
+        {
+            InWinState = true;
+            timeText.transform.parent.gameObject.SetActive(false);
+            PuzzleSceneManager.SceneSwitch("WinScene");
+        }
     }
 
     private void DisplayTime(float timeToDisplay) {
@@ -112,7 +129,7 @@ public class GameController : MonoBehaviour
 
         //Starting timer
         timeText.transform.parent.gameObject.SetActive(true);
-        timer = new Timer(1800);
+        timer.timerIsRunning = true;
     }
 
     public void QuitGame() {

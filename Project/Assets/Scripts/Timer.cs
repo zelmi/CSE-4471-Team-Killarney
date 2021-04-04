@@ -8,7 +8,6 @@ public class Timer
 {
     public float TimeRemaining {get; set;}
     public bool timerIsRunning = false;
-    public Text timeText;
 
 
     public Timer(int startTime) {
@@ -17,15 +16,6 @@ public class Timer
         //30 minutes
         TimeRemaining = startTime;
     }
-
-    public void Start()
-    {
-        // Starts the timer automatically
-        timerIsRunning = true;
-        //30 minutes
-        TimeRemaining = 1800;
-    }
-
     public void UpdateTime()
     {
         if (timerIsRunning)
@@ -43,13 +33,4 @@ public class Timer
         }
     }
 
-    public void DisplayTime(float timeToDisplay)
-    {
-        timeToDisplay += 1;
-
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-
-        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
 }
