@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,17 +44,18 @@ public class GameController : MonoBehaviour
     private bool alarmCountdownInitiated;
 
     public Timer timer;
-    public Text timeText;
+    public TMP_Text timeText;
 
 
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(timeText.transform.parent.gameObject);
 
         // timer = gameObject.AddComponent(typeof(Timer)) as Timer; 
         timer = new Timer(1800);
-        timeText =  GetComponent<Text>();
+        //timeText =  GetComponent<Text>();
         Inventory = gameObject.AddComponent(typeof(Inventory)) as Inventory; 
         PostItPuzzle = false;
         UnlockStorageRoomPuzzle = false;
@@ -101,12 +103,15 @@ public class GameController : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        // timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     public void StartGame() {
         //Main room
         PuzzleSceneManager.SceneSwitch("GameScene");
+
+        //Starting timer
+        timeText.transform.parent.gameObject.SetActive(true);
         timer = new Timer(1800);
     }
 
