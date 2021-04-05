@@ -31,9 +31,9 @@ public class HackerComputerIneractable : MonoBehaviour, IInteractable
 
     public void onInteract()
     {
-        if(!_hasHadUSB && GlobalVarsAndEvents.PlayerHasUsb){
+        if(!_hasHadUSB && GameController.PlayerHasUsb){
             _hasHadUSB = true;
-            GlobalVarsAndEvents.USBHasVirus = true;
+            GameController.USBHasVirus = true;
         } else {
             //Intentionally Empty
         }

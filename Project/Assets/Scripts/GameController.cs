@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
@@ -39,8 +40,24 @@ public class GameController : MonoBehaviour
     //Dependent on puzzle 06
     public bool DDoSPuzzle {get; set;}
 
+    //Signals if all puzzles are complete and server room door can be opened
+    public bool ServerRoomOpen {get; private set;}
+
     //Tracks whether the response to the phishing email from puzzle 6 has been sent
     public bool PhishingResponse { get; set; }
+
+    //tracks whether the storage room door is unlocked
+    public bool StorageUnlocked{ get; set; }
+
+    //tracks whether the Manager's room door is unlocked
+    public bool BossUnlocked{ get; set; }
+
+    //Tracks whether the player has found the USB stick in the storage room, and whether they have downloaded the virus onto it
+    private static bool playerHasUsb = false;
+    private static bool usbHasVirus = false;
+
+    public static bool PlayerHasUsb{ get => playerHasUsb; set => playerHasUsb = value; }
+    public static bool USBHasVirus{ get => usbHasVirus; set => usbHasVirus = value; }
 
     private bool alarmCountdownInitiated;
 
@@ -80,6 +97,9 @@ public class GameController : MonoBehaviour
         PhishingResponse = false;
         InLoseState = false;
         InWinState = false;
+        StorageUnlocked = false;
+        BossUnlocked = false;
+        ServerRoomOpen = false;
 
     }
 
@@ -96,19 +116,22 @@ public class GameController : MonoBehaviour
             if (VirusDisablesProtectionPuzzle && DisableManagersSeecurityProtectionPuzzle) {
                 // 5 minutes
                 timer = new Timer(300);
+                alarmCountdownInitiated = true;
             }
-            if (DDoSPuzzle) {
-                ActivateWinState();
+        } else {
+            if(DDoSPuzzle){
+                alarmCountdownInitiated = false;
+                ServerRoomOpen = true;
             }
         }
 
-        if(Keyboard.current.spaceKey.isPressed)
+        /*if(Keyboard.current.spaceKey.isPressed)
         {
             ActivateWinState();
-        }
+        }*/
     }
 
-    private void ActivateLoseState() {
+    public void ActivateLoseState() {
         if (!InLoseState)
         {
             InLoseState = true;
@@ -117,7 +140,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void ActivateWinState() {
+    public void ActivateWinState() {
         if (!InWinState)
         {
             InWinState = true;
