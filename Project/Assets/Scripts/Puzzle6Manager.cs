@@ -247,7 +247,7 @@ public class Puzzle6Manager : MonoBehaviour
 
         //Serialize
         XmlSerializer serializer = new XmlSerializer(typeof(EmailInbox));
-        TextWriter writer = new StreamWriter("Assets/Data/newsent.xml");
+        TextWriter writer = new StreamWriter(Application.streamingAssetsPath + "/Data/newsent.xml");
         serializer.Serialize(writer, sentData);
     }
 

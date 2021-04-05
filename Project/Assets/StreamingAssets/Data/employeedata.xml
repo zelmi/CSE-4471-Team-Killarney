@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmployeeData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <employeeList>
+    <Employee name="Agarwal, Kourtney" email="agarwal.kourtney@bmail.com" role="Security guard" />
+    <Employee name="Breese, Mollie" email="breese.mollie@bmail.com" role="Software Engineer" />
+    <Employee name="Casavant, Joycelyn" email="casavant.joycelyn@bmail.com" role="Customer Service Rep" />
+    <Employee name="Chavarria, Divina" email="chavarria.divina@bmail.com" role="Marketer" />
+    <Employee name="Coad, Cecilia" email="coad.cecilia@bmail.com" role="Recruiter" />
+    <Employee name="Cranfield, Dennis" email="cranfield.dennis@bmail.com" role="Customer Service" />
+    <Employee name="Doney, Aileen" email="doney.aileen@bmail.com" role="IT Support" />
+    <Employee name="Ficklin, Reyes" email="ficklin.reyes@bmail.com" role="Software Engineer" />
+    <Employee name="Filer, Tod" email="filer.tod@bmail.com" role="Accountant" />
+    <Employee name="Goudy, Allene" email="goudy.allene@bmail.com" role="Marketer" />
+    <Employee name="Greathouse, Miquel" email="greathouse.miquel@bmail.com" role="Security guard" />
+    <Employee name="Greenbaum, Dagmar" email="greenbaum.dagmar@bmail.com" role="Server Administrator" />
+    <Employee name="Haman, Hallie" email="haman.hallie@bmail.com" role="Project Manager" />
+    <Employee name="Johnstone, Otelia" email="johnstone.otelia@bmail.com" role="Customer Service Rep" />
+    <Employee name="Kearl, Sybil" email="kearl.sybil@bmail.com" role="Software Engineer" />
+    <Employee name="Lai, Jenell" email="lai.jenell@bmail.com" role="Analyst" />
+    <Employee name="Lillis, Kara" email="lillis.kara@bmail.com" role="Technician" />
+    <Employee name="Mackay, Justine" email="mackay.justine@bmail.com" role="Secretary" />
+    <Employee name="Pou, Raphael" email="pou.raphael@bmail.com" role="Software Engineer" />
+    <Employee name="Teter, Lovie" email="teter.lovie@bmail.com" role="Technician" />
+
+  </employeeList>
+</EmployeeData>
