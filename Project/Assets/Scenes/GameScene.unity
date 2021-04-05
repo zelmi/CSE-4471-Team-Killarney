@@ -4633,6 +4633,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 725334224}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &725334226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6fa22d47b3feddb439bd7a1dc39b2968,
+    type: 3}
+  m_PrefabInstance: {fileID: 725334224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &725334227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725334226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae809ca586bc12d40979e8c03e2cdbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInteractable: 1
+  hoverMessage: Sticky Note
+  scene: 1.PostIt
+--- !u!65 &725334228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725334226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.31289, y: 0.58912516, z: 8.253485}
+  m_Center: {x: -2.71413, y: -0.014933348, z: 1.9853959}
 --- !u!1001 &729387329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5806,6 +5840,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eab9a1e97bf14904698f6ed18fd7e3e2, type: 3}
+--- !u!1 &929640106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1586500889978838, guid: eab9a1e97bf14904698f6ed18fd7e3e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 929640105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &929640107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929640106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae809ca586bc12d40979e8c03e2cdbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInteractable: 1
+  hoverMessage: Employee Records
+  scene: EmployeeFiles
 --- !u!1 &933135364
 GameObject:
   m_ObjectHideFlags: 0
@@ -5986,6 +6041,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 238.71407, y: 23.003126, z: 262.37512}
   m_Center: {x: -25.422836, y: 1.7117926, z: 3.1004326}
+--- !u!114 &956472036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956472033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91bb4dde8855d6840a81ea7040ab94f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMessage: Empty USB Drive
 --- !u!1 &975875123 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1191596092261060, guid: 548b55d3e2f945942be6ac7612199877,
@@ -8539,8 +8607,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1347575668}
+  - component: {fileID: 1347575669}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Globals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8560,6 +8629,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1347575669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347575667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5397914ea2027784f9416e44f7061c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnlockStorage:
+    m_PersistentCalls:
+      m_Calls: []
+  UnlockManager:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1372816692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9958,6 +10045,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bda03e6c90ba284f859d8e2c3a027fc, type: 3}
+--- !u!1 &1652768573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1163334601776374, guid: 88cbb557f01af264c8417bbd28ff33c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1097557136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1652768578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652768573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6328fbaf2b090499c1812db0d347a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMessageBeforeUSB: Hacker's Computer (Bring USB)
+  hoverMessageAfterUSB: USB Has Virus
 --- !u!1001 &1655738236
 PrefabInstance:
   m_ObjectHideFlags: 0

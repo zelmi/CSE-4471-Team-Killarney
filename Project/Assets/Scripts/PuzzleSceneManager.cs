@@ -29,14 +29,14 @@ public class PuzzleSceneManager
         //Entering puzzle from main scene
         if (!inPuzzle)
         {
-            PauseScene();
-
             //Additive to keep the previous scene loaded
             AsyncOperation operation = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
             operation.allowSceneActivation = true;
 
             sceneString = scene;
             inPuzzle = true;
+
+            PauseScene();
         } else //Entering puzzle from a puzzle
         {
             //Additive to keep the previous scene loaded

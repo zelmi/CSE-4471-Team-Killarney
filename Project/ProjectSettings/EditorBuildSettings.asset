@@ -21,14 +21,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Puzzle Scenes/1.EmailLogin.unity
     guid: e16e14a4c439d92459d3b5da58427c93
   - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/1.PostIt.unity
+    guid: c46bebdc6f90e01479675ba3f4107137
+  - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/2.HiddenMessage.unity
     guid: fa2fe6c022a6e447d8d1390a20efad2f
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/2.DoorKeypad.unity
+    guid: 6cf6b5c4d514b284ba6e7673667e5cf9
   - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/3.SSLstrip.unity
     guid: 2081d180577fb4f208443676f5e4684c
   - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/4.PacketSniffing.unity
     guid: b08885c24ae94419d83c052ae67cfe83
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/4b.DoorKeypad.unity
+    guid: 2b0c248467ddb714d9ce2550c38db7c1
   - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/5.CrackPassword.unity
     guid: fd288ef27cd0f432da86c9f7fec6d962
@@ -44,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/ShutdownSecurityScene.unity
     guid: 8327c473b135649b8b86c3586d6a083f
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/EmployeeFiles.unity
+    guid: 9604ef0520e0a424c95136a2824c24bb
   m_configObjects: {}
