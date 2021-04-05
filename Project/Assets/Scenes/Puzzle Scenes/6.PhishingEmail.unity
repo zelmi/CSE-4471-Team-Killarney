@@ -1558,10 +1558,10 @@ MonoBehaviour:
   toField: {fileID: 1474150718}
   subjectField: {fileID: 131812257}
   messageField: {fileID: 1176297565}
-  toTarget: ceo@bmail.com
+  toTarget: greenbaum.dagmar@bmail.com
   subjectTargets:
   - important
-  - business
+  - security
   messageTargets:
   - urgent
   - password
