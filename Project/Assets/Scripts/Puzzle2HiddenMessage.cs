@@ -43,7 +43,9 @@ public class Puzzle2HiddenMessage : MonoBehaviour
 
     public void ifSuccess()
     {
-        //proceed to next part where the door is open
+        PuzzleSceneManager.SceneSwitch("GameScene");
+        //Unlock door in gamecontroller or doorInteractions
+
     }
 
     // expectedCode
