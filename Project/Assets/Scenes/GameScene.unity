@@ -8674,7 +8674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268489408920228, guid: 106e0f600ce0361469ff2428db6b7abc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.697
+      value: 0.787
       objectReference: {fileID: 0}
     - target: {fileID: 4268489408920228, guid: 106e0f600ce0361469ff2428db6b7abc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8682,7 +8682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268489408920228, guid: 106e0f600ce0361469ff2428db6b7abc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.19768482
+      value: -0.252
       objectReference: {fileID: 0}
     - target: {fileID: 4268489408920228, guid: 106e0f600ce0361469ff2428db6b7abc, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8724,6 +8724,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1421205706}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1421205708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1466551327114840, guid: 106e0f600ce0361469ff2428db6b7abc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1421205706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1421205709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421205708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae809ca586bc12d40979e8c03e2cdbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInteractable: 1
+  hoverMessage: Suspicious Paper
+  scene: 4b.Message
 --- !u!1001 &1435623978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11696,6 +11717,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2001598473}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2001598475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1466551327114840, guid: 106e0f600ce0361469ff2428db6b7abc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2001598473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2001598476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001598475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae809ca586bc12d40979e8c03e2cdbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInteractable: 1
+  hoverMessage: Flyer
+  scene: 2.HiddenMessage
 --- !u!1001 &2022941115
 PrefabInstance:
   m_ObjectHideFlags: 0
