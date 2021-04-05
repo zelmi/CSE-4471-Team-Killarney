@@ -167,7 +167,7 @@ MonoBehaviour:
   email: {fileID: 3395070697485600143}
   password: {fileID: 7451707102785961173}
   expectedEmail: martens.alice@bmail.com
-  expectedPassword: 1234
+  expectedPassword: 1234A$*
 --- !u!1 &278617880
 GameObject:
   m_ObjectHideFlags: 0
