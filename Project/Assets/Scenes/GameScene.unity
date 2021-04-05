@@ -6079,7 +6079,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &975875127
+--- !u!114 &975875125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6088,12 +6088,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 975875123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b180a5ce3f43cec47805e5cb4da52597, type: 3}
+  m_Script: {fileID: 11500000, guid: ca0f9f0ac935e934a971f6e1aabcdeb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockedHoverMessage: Locked
+  lockedHoverMessage: Storage Room
   unlockedHoverMessage: Unlocked
-  scene: 1.EmailLogin
+  scene: 2.DoorKeypad
 --- !u!1001 &982001968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8598,55 +8598,6 @@ Transform:
   m_Father: {fileID: 1976842914}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1347575667
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1347575668}
-  - component: {fileID: 1347575669}
-  m_Layer: 0
-  m_Name: Globals
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1347575668
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347575667}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2316895, y: 2.288086, z: -6.599121}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1347575669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347575667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5397914ea2027784f9416e44f7061c4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UnlockStorage:
-    m_PersistentCalls:
-      m_Calls: []
-  UnlockManager:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &1372816692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8856,7 +8807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockedHoverMessage: Manager's Office
   unlockedHoverMessage: Open Office
-  scene: 1.EmailLogin
+  scene: 4b.DoorKeypad
 --- !u!95 &1437746142
 Animator:
   serializedVersion: 3
@@ -10063,7 +10014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6328fbaf2b090499c1812db0d347a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverMessageBeforeUSB: Hacker's Computer (Bring USB)
+  hoverMessageBeforeUSB: Hacker's Computer
   hoverMessageAfterUSB: USB Has Virus
 --- !u!1001 &1655738236
 PrefabInstance:
@@ -11987,7 +11938,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2058395851
 PrefabInstance:
@@ -12019,12 +11970,12 @@ PrefabInstance:
     - target: {fileID: 7267399157140279484, guid: f70fff604c888b94ebcf280dd2b56a45,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 547.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7267399157140279484, guid: f70fff604c888b94ebcf280dd2b56a45,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 235
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7267399157140279484, guid: f70fff604c888b94ebcf280dd2b56a45,
         type: 3}
@@ -12054,7 +12005,7 @@ PrefabInstance:
     - target: {fileID: 7267399157140279484, guid: f70fff604c888b94ebcf280dd2b56a45,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7267399157140279484, guid: f70fff604c888b94ebcf280dd2b56a45,
         type: 3}

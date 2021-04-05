@@ -15,7 +15,7 @@ public class USBInteractable : MonoBehaviour, IInteractable
     public void onInteract()
     {
         isInteractable = false;
-        GlobalVarsAndEvents.PlayerHasUsb = true;
+        GameController.PlayerHasUsb = true;
         
         gameObject.SetActive(false);
     }

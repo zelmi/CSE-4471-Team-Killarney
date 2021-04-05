@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorInteractions : MonoBehaviour, IInteractable
+public class DoorInteractionsBoss : MonoBehaviour, IInteractable
 {
     [Header("Data Objects")]
     [SerializeField] private string lockedHoverMessage;
     [SerializeField] private string unlockedHoverMessage;
     [SerializeField] private string scene;
+
+    //interavtability variable, set based on interaction
     private bool isInteractable;
     private Animator _anim;
-    private bool isLocked;
+    private GameObject gameController;
 
     public bool IsInteractable { get => isInteractable; }
 
-    public bool IsLocked { get => isLocked; set => isLocked = value; }
-
     public string HoverMessage { 
         get {
-            if(isLocked){
+            if(!gameController.GetComponent<GameController>().BossUnlocked){
                 return lockedHoverMessage;
             } else {
                 return unlockedHoverMessage;
@@ -28,7 +28,7 @@ public class DoorInteractions : MonoBehaviour, IInteractable
 
     public void onInteract()
     {
-        if(isLocked){
+        if(!gameController.GetComponent<GameController>().BossUnlocked){
             PuzzleSceneManager.SwitchToPuzzle(scene);
         } else {
             _anim.SetBool("hasBeenOpened", true);
@@ -40,6 +40,6 @@ public class DoorInteractions : MonoBehaviour, IInteractable
     {
         isInteractable = true;
         _anim = this.transform.GetComponent<Animator>();
-        isLocked = false;
+        gameController = GameObject.FindGameObjectWithTag("GameController");
     }
 }
