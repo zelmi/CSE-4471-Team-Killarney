@@ -56,6 +56,8 @@ public class InteractionController : MonoBehaviour
             if(interactionData.Interactable.IsInteractable){
                 if(interactionInputData.InteractPress){
                     interactionData.Interact();
+                    interactionData.Reset();
+                    hoverUIController.ResetUI();
                 }
             }
         }
