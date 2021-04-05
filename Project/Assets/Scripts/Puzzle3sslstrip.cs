@@ -54,6 +54,6 @@ public class Puzzle3sslstrip : MonoBehaviour
     }
 
     public void OnClickCompleteProcess() {
-        PuzzleSceneManager.SceneSwitch("DecryptedSSLScene");
+        PuzzleSceneManager.SwitchToPuzzle("DecryptedSSLScene");
     }
 }

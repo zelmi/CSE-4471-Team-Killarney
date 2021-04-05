@@ -8,12 +8,12 @@ public class SecurityShutdownScript : MonoBehaviour
 {
     public void OnClickPower()
     {
-        PuzzleSceneManager.SceneSwitch("GameScene");
+        PuzzleSceneManager.ExitPuzzle();
         // Change gamecontroller flag
     }
 
     public void OnClickCancel()
     {
-        PuzzleSceneManager.SceneSwitch("PasswordScene");
+        PuzzleSceneManager.SwitchToPuzzle("PasswordScene");
     }
 }

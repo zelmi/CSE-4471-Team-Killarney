@@ -72,7 +72,7 @@ public class Puzzle8DDoSScript : MonoBehaviour
     private IEnumerator LeaveScene()
     {  
         yield return new WaitForSeconds(10);
-        PuzzleSceneManager.SceneSwitch("GameScene");
+        PuzzleSceneManager.ExitPuzzle();
     }
 
     private void setIPs() { 
