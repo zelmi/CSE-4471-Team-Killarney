@@ -14,6 +14,11 @@ public class Puzzle2HiddenMessage : MonoBehaviour
 
     public TMP_InputField enteredCode;
 
+    public void OnClick()
+    {
+        PuzzleSceneManager.ExitPuzzle();
+    }
+    /*
     public void OnEnterCode()
     {
         string expectedCode = "twibbsrmmtpahm";
@@ -55,4 +60,5 @@ public class Puzzle2HiddenMessage : MonoBehaviour
     // public void OnClickCompleteProcess() {
     //     PuzzleSceneManager.SceneSwitch("DecryptedSSLScene");
     // }
+    */
 }
