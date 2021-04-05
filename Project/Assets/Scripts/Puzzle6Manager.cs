@@ -14,9 +14,6 @@ public class Puzzle6Manager : MonoBehaviour
     //Game controller object
     private GameObject gameController;
 
-    //Response from phishing target
-    private EmailInbox.Message phishingResponse;
-
     //Message data
     public EmailInbox inboxData;
     public EmailInbox sentData;
@@ -54,6 +51,7 @@ public class Puzzle6Manager : MonoBehaviour
         gameController = GameObject.FindGameObjectWithTag("GameController");
 
         InitializeMessages();
+
     }
 
     //Event handler for closing email
@@ -171,6 +169,15 @@ public class Puzzle6Manager : MonoBehaviour
         {
             if (gameController.GetComponent<GameController>().PhishingResponse)
             {
+                //Load phishing response
+                XmlSerializer ser = new XmlSerializer(typeof(EmailInbox.Message));
+                file = new FileStream(Application.streamingAssetsPath + "/Data/phishingresponse.xml", FileMode.Open);
+                EmailInbox.Message phishingResponse = (EmailInbox.Message)ser.Deserialize(file);
+
+                //Get time for the response
+                phishingResponse.time = GetTime();
+
+                //Add to inbox
                 inboxData.messageList.Insert(0, phishingResponse);
             }
         }
@@ -249,12 +256,18 @@ public class Puzzle6Manager : MonoBehaviour
         XmlSerializer serializer = new XmlSerializer(typeof(EmailInbox));
         TextWriter writer = new StreamWriter(Application.streamingAssetsPath + "/Data/newsent.xml");
         serializer.Serialize(writer, sentData);
+
+        //Close and clear email compose window
+        toField.text = "";
+        subjectField.text = "";
+        messageField.text = "";
+        OnClickComposeClose();
     }
 
     //Gets the "current" time
     string GetTime()
     {
-        return "7:" + (29 + (int)(30 - gameController.GetComponent<GameController>().timer.TimeRemaining / 60));
+        return "7:" + (29 + (int)(30 - gameController.GetComponent<GameController>().timer.TimeRemaining / 60)) + "pm";
     }
 
     void Update()

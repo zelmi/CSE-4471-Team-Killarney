@@ -1560,14 +1560,16 @@ MonoBehaviour:
   messageField: {fileID: 1176297565}
   toTarget: greenbaum.dagmar@bmail.com
   subjectTargets:
-  - important
-  - security
+  - immediate
+  - account
   messageTargets:
-  - urgent
+  - data
+  - breach
+  - email
+  - account
+  - username
   - password
-  - immediately
-  - security
-  - trust
+  - unusual
   subjectMatchCountTarget: 1
   messageMatchCountTarget: 3
   emailComposeWindow: {fileID: 153538575}
