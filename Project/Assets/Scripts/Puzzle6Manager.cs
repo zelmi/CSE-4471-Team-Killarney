@@ -145,25 +145,25 @@ public class Puzzle6Manager : MonoBehaviour
     {
         //Inbox
         XmlSerializer serialize = new XmlSerializer(typeof(EmailInbox));
-        FileStream file = new FileStream("Assets/Data/inbox.xml", FileMode.Open);
+        FileStream file = new FileStream(Application.streamingAssetsPath + "/Data/inbox.xml", FileMode.Open);
         inboxData = (EmailInbox)serialize.Deserialize(file);
 
         //Sent
-        file = new FileStream("Assets/Data/sent.xml", FileMode.Open);
+        file = new FileStream(Application.streamingAssetsPath + "/Data/sent.xml", FileMode.Open);
         
         //If there is new sent data, then use that instead
-        if (File.Exists("Assets/Data/newsent.xml"))
+        if (File.Exists(Application.streamingAssetsPath + "/Data/newsent.xml"))
         {
-            file = new FileStream("Assets/Data/newsent.xml", FileMode.Open);
+            file = new FileStream(Application.streamingAssetsPath + "/Data/newsent.xml", FileMode.Open);
         }
         sentData = (EmailInbox)serialize.Deserialize(file);
 
         //Spam
-        file = new FileStream("Assets/Data/spam.xml", FileMode.Open);
+        file = new FileStream(Application.streamingAssetsPath + "/Data/spam.xml", FileMode.Open);
         spamData = (EmailInbox)serialize.Deserialize(file);
 
         //Trash
-        file = new FileStream("Assets/Data/trash.xml", FileMode.Open);
+        file = new FileStream(Application.streamingAssetsPath + "/Data/trash.xml", FileMode.Open);
         trashData = (EmailInbox)serialize.Deserialize(file);
 
         //More sanity checking
