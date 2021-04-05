@@ -101,15 +101,15 @@ public class Puzzle6Manager : MonoBehaviour
         emailMessageText.SetActive(true);
 
         //Special case email was from sent
-        if (sourceList == sentData)
+        if (sourceList.type == "Sent")
         {
-            emailMessageText.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = "hr.alice@bmail.com";
+            emailMessageText.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = "martens.alice@bmail.com";
             emailMessageText.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = sourceList.messageList[index].senderOrRecipient;
 
         } else
         {
             emailMessageText.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = sourceList.messageList[index].senderOrRecipient;
-            emailMessageText.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = "hr.alice@bmail.com";
+            emailMessageText.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = "martens.alice@bmail.com";
         }
 
         emailMessageText.transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = sourceList.messageList[index].subject;
