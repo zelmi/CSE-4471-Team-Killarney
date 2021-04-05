@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<EmailInbox xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <messageList>
-    <Message senderOrRecipient="123" subject="123" time="7:29pm" text="12323" />
-    <Message senderOrRecipient="Doe, John" subject="RE: When is meeting?" time="11:56am" text="The meeting is at 3, don't be late~~Best,~Alice" />
-  </messageList>
-</EmailInbox>
