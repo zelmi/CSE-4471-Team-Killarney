@@ -2433,7 +2433,7 @@ GameObject:
   - component: {fileID: 1292623292}
   - component: {fileID: 1292623293}
   m_Layer: 5
-  m_Name: LetterPad
+  m_Name: NumberPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2474,7 +2474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6fe14c26dd4f64c944eedff27c961f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  password: AAAAAAA
+  password: 1006609
   output: {fileID: 353933136}
 --- !u!1 &1327409776
 GameObject:
