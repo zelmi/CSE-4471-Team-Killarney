@@ -3760,6 +3760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 1
   hoverMessage: Vulnerable Computer
+  hoverMessageConfirm: This may trigger an alarm, are you sure?
 --- !u!1001 &629095612
 PrefabInstance:
   m_ObjectHideFlags: 0

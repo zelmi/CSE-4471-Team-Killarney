@@ -16,6 +16,9 @@ public class WinInteractable : MonoBehaviour, IInteractable
 
     public void onInteract()
     {
+        Debug.Log("ServerRoom Flag:" + gameController.GetComponent<GameController>().ServerRoomOpen);
+        //Debug.Log("Alarm Flag:" + gameController.GetComponent<GameController>().ServerRoomOpen);
+        Debug.Log("DDOS flag:" + gameController.GetComponent<GameController>().DDoSPuzzle);
         //if server room is open
         if(gameController.GetComponent<GameController>().ServerRoomOpen){
             //win the game
