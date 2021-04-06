@@ -8,8 +8,6 @@ using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
-
-    public Inventory Inventory {get; set;}
     
     // Puzzle is complete once first computer is unlocked using post it note password: 01
     public bool PostItPuzzle {get; set;} 
@@ -79,9 +77,7 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(timeText.transform.parent.gameObject);
 
-        // timer = gameObject.AddComponent(typeof(Timer)) as Timer; 
         timer = new Timer(1800);
-        //timeText =  GetComponent<Text>();
         Inventory = gameObject.AddComponent(typeof(Inventory)) as Inventory;
         ResetBooleans();
     }
@@ -131,15 +127,10 @@ public class GameController : MonoBehaviour
         } else {
             if(DDoSPuzzle){
                 Destroy(redFilterInstance);
-                //alarmCountdownInitiated = false;
                 ServerRoomOpen = true;
             }
         }
 
-        /*if(Keyboard.current.spaceKey.isPressed)
-        {
-            ActivateWinState();
-        }*/
     }
 
     public void ActivateLoseState() {
