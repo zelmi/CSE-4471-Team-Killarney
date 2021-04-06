@@ -64,6 +64,9 @@ public class Puzzle8DDoSScript : MonoBehaviour
         if (zombiesCt > 9) {
             minigameScreen.SetActive(false);
             winScreen.SetActive(true);
+
+            //Set DDoS puzzle complete
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DDoSPuzzle = true;
             StartCoroutine(LeaveScene());
            
         }

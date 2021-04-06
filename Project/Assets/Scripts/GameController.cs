@@ -68,6 +68,8 @@ public class GameController : MonoBehaviour
     //Will be used once player triggers the countdown
     public GameObject redFilter;
 
+    private GameObject redFilterInstance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,11 +121,12 @@ public class GameController : MonoBehaviour
                 alarmCountdownInitiated = true;
 
                 //Adds red filter
-                Instantiate(redFilter);
+                redFilterInstance = Instantiate(redFilter);
             }
         } else {
             if(DDoSPuzzle){
-                alarmCountdownInitiated = false;
+                Destroy(redFilterInstance);
+                //alarmCountdownInitiated = false;
                 ServerRoomOpen = true;
             }
         }
