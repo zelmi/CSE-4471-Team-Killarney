@@ -20,6 +20,7 @@ public class VirusComputerScript : MonoBehaviour, IInteractable
         if(GameController.PlayerHasUsb && GameController.USBHasVirus){
             //remove one of the locks
             gameController.GetComponent<GameController>().VirusDisablesProtectionPuzzle = true;
+            gameController.GetComponent<GameController>().PhishingResponse = true;
             isInteractable = false;
         }
     }
