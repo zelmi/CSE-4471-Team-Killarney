@@ -75,6 +75,7 @@ public class Puzzle8DDoSScript : MonoBehaviour
     private IEnumerator LeaveScene()
     {  
         yield return new WaitForSeconds(10);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DDoSPuzzle = true;
         PuzzleSceneManager.ExitPuzzle();
     }
 
