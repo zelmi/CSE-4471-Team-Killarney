@@ -5209,6 +5209,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 794728219}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &799202981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1393305836126458, guid: a5a328fd0bdbc82418c900ec0e290bd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1813515669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &799202982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799202981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae809ca586bc12d40979e8c03e2cdbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInteractable: 1
+  hoverMessage: Server Admin Computer
+  scene: 8.UnlockDDoSComputer
 --- !u!1001 &819896075
 PrefabInstance:
   m_ObjectHideFlags: 0
