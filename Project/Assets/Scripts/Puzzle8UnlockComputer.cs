@@ -21,7 +21,7 @@ public class Puzzle8UnlockComputer : MonoBehaviour
             password.interactable = false;
 
             //Go to email puzzle
-            PuzzleSceneManager.SceneSwitch("8.DDoSScene");
+            PuzzleSceneManager.SwitchToPuzzle("8.DDoSScene");
         }
         password.text = "";
     }
