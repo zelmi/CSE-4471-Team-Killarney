@@ -54,6 +54,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Puzzle Scenes/ShutdownSecurityScene.unity
     guid: 8327c473b135649b8b86c3586d6a083f
   - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/8.DDoSScene.unity
+    guid: f6154372c7f7a4fa1829e785f6fe74f4
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/8.UnlockDDoSComputer.unity
+    guid: ed789ea15a82643439c1605945976791
+  - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/EmployeeFiles.unity
     guid: 9604ef0520e0a424c95136a2824c24bb
   m_configObjects: {}
