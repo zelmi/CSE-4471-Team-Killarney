@@ -53,11 +53,9 @@ public class GameController : MonoBehaviour
     public bool BossUnlocked{ get; set; }
 
     //Tracks whether the player has found the USB stick in the storage room, and whether they have downloaded the virus onto it
-    private static bool playerHasUsb = false;
-    private static bool usbHasVirus = false;
 
-    public static bool PlayerHasUsb{ get => playerHasUsb; set => playerHasUsb = value; }
-    public static bool USBHasVirus{ get => usbHasVirus; set => usbHasVirus = value; }
+    public static bool PlayerHasUsb{ get; set; }
+    public static bool USBHasVirus{ get; set; }
 
     private bool alarmCountdownInitiated;
 

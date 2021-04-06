@@ -39,11 +39,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Puzzle Scenes/4b.DoorKeypad.unity
     guid: 2b0c248467ddb714d9ce2550c38db7c1
   - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/4b.Message.unity
+    guid: ffd29ad3b6aeb1845a59118e04348b1e
+  - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/5.CrackPassword.unity
     guid: fd288ef27cd0f432da86c9f7fec6d962
   - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/6.PhishingEmail.unity
     guid: a05b1bab7d48340d490cbd0cc6b9a950
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Scenes/8.DDoSScene.unity
+    guid: f6154372c7f7a4fa1829e785f6fe74f4
   - enabled: 1
     path: Assets/Scenes/Puzzle Scenes/DecryptedSSLScene.unity
     guid: 8008278d0a0d64c1a930cbfa0d69f222
