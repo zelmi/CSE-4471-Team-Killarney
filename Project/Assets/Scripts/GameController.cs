@@ -78,7 +78,6 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(timeText.transform.parent.gameObject);
 
         timer = new Timer(1800);
-        Inventory = gameObject.AddComponent(typeof(Inventory)) as Inventory;
         ResetBooleans();
     }
 
