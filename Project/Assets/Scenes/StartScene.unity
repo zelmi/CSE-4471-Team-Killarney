@@ -1212,5 +1212,11 @@ PrefabInstance:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 1835422142}
+    - target: {fileID: 7596614866655592215, guid: 410a4729ac10d496cb118a620170bfdc,
+        type: 3}
+      propertyPath: redFilter
+      value: 
+      objectReference: {fileID: 447793986000840182, guid: d7dafc13cf29f7c49b804aebf4c96467,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 410a4729ac10d496cb118a620170bfdc, type: 3}

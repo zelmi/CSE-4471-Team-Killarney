@@ -65,6 +65,8 @@ public class GameController : MonoBehaviour
     public Timer timer;
     public TMP_Text timeText;
 
+    //Will be used once player triggers the countdown
+    public GameObject redFilter;
 
     // Start is called before the first frame update
     void Start()
@@ -115,6 +117,9 @@ public class GameController : MonoBehaviour
                 // 5 minutes
                 timer.TimeRemaining = 300;
                 alarmCountdownInitiated = true;
+
+                //Adds red filter
+                Instantiate(redFilter);
             }
         } else {
             if(DDoSPuzzle){
