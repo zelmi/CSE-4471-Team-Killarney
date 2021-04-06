@@ -113,7 +113,7 @@ public class GameController : MonoBehaviour
         if (!alarmCountdownInitiated) {
             if (VirusDisablesProtectionPuzzle && DisableManagersSeecurityProtectionPuzzle) {
                 // 5 minutes
-                timer = new Timer(300);
+                timer.TimeRemaining = 300;
                 alarmCountdownInitiated = true;
             }
         } else {
