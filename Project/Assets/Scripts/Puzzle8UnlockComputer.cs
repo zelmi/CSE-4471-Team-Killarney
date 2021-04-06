@@ -25,4 +25,9 @@ public class Puzzle8UnlockComputer : MonoBehaviour
         }
         password.text = "";
     }
+
+    public void Exit()
+    {
+        PuzzleSceneManager.ExitPuzzle();
+    }
 }

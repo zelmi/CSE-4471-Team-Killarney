@@ -73,6 +73,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Locking cursor to the window
+        Cursor.lockState = CursorLockMode.Confined;
+
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(timeText.transform.parent.gameObject);
 

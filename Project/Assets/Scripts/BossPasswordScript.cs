@@ -23,4 +23,9 @@ public class BossPasswordScript : MonoBehaviour
         }
         password.text = "";
     }
+
+    public void Exit()
+    {
+        PuzzleSceneManager.ExitPuzzle();
+    }
 }
