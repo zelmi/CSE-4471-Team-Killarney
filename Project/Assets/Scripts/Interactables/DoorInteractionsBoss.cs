@@ -28,6 +28,7 @@ public class DoorInteractionsBoss : MonoBehaviour, IInteractable
 
     public void onInteract()
     {
+        //Debug.Log("" + gameController.GetComponent<GameController>().BossUnlocked);
         if(!gameController.GetComponent<GameController>().BossUnlocked){
             PuzzleSceneManager.SwitchToPuzzle(scene);
         } else {

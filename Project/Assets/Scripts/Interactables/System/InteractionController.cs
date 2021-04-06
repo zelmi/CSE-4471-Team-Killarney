@@ -18,6 +18,10 @@ public class InteractionController : MonoBehaviour
     private Camera p_cam;
     private bool p_interacting;
 
+    void Start(){
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Awake() {
         p_cam = FindObjectOfType<Camera>();
     }
@@ -41,6 +45,8 @@ public class InteractionController : MonoBehaviour
                 if(interactionData.IsEmpty() || !interactionData.IsSameObj(_interactable)){
                     interactionData.Interactable = _interactable;
                     hoverUIController.SetHoverMessage(interactionData.Interactable.HoverMessage);
+                } else {
+                    hoverUIController.SetHoverMessage(interactionData.Interactable.HoverMessage);
                 }
             }
         } else {
@@ -63,5 +69,9 @@ public class InteractionController : MonoBehaviour
         }
 
         interactionInputData.Reset();
+    }
+
+    public void UpdateText(){
+        hoverUIController.SetHoverMessage(interactionData.Interactable.HoverMessage);
     }
 }
