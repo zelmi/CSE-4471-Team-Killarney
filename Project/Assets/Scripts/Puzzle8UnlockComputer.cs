@@ -2,24 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using static UnityEngine.InputSystem.InputAction;
 
-public class BossPasswordScript : MonoBehaviour
+public class Puzzle8UnlockComputer : MonoBehaviour
 {
+    public TMP_InputField username;
     public TMP_InputField password;
     
     //Probably should be private readonly, but we still need to figure out the final password, so leave public to change and test in Unity for now
+    public string expectedUsername;
     public string expectedPassword;
 
     public void OnClick()
     {
-        if (password.text == expectedPassword)
+        Debug.Log("clicked");
+        if (username.text == expectedUsername && password.text == expectedPassword)
         {
             //Disable interaction
             password.interactable = false;
 
             //Go to email puzzle
-            PuzzleSceneManager.SceneSwitch("ShutdownSecurityScene");
+            PuzzleSceneManager.SwitchToPuzzle("8.DDoSScene");
         }
         password.text = "";
     }
