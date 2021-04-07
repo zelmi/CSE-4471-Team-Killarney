@@ -44,7 +44,7 @@ public class Puzzle4PacketSniffer : MonoBehaviour
 
     public void OnEnterSecondCommand()
     {
-        string expectedSecondCommand = "pktmon start —etw";
+        string expectedSecondCommand = "pktmon start --etw";
         string x = SecondCommand.text;
 
         if (
@@ -94,5 +94,9 @@ public class Puzzle4PacketSniffer : MonoBehaviour
     {
         canvas5.SetActive(false);
         canvas6.SetActive(true);
+    }
+
+    public void ExitPuzzle(){
+        PuzzleSceneManager.ExitPuzzle();
     }
 }
