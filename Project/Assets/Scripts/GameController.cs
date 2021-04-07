@@ -8,21 +8,6 @@ using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
-    
-    // Puzzle is complete once first computer is unlocked using post it note password: 01
-    public bool PostItPuzzle {get; set;} 
-
-    //Puzzle is complete when storage room is unlocked with keycode: 02
-    public bool UnlockStorageRoomPuzzle {get; set;}
-
-    //Puzzle is complete once messsage is decoded with sslStrip: 03
-    public bool SSLStripPuzzle {get; set;}
-
-    //Puzzle is complete once network traffic is found using packetsniffer commands: 04 
-    public bool PacketSnifferPuzzle {get; set;}
-
-    //Puzzle is complete once managers office is unlocked using keypad: 05 
-    public bool UnlockManagersOfficePuzzle {get; set;}
 
     //Puzzle is complete once logged into managers computer after guessing password: 05 
     public bool DisableManagersSeecurityProtectionPuzzle {get; set;}
@@ -84,11 +69,6 @@ public class GameController : MonoBehaviour
     //Sets initial values for booleans
     public void ResetBooleans()
     {
-        PostItPuzzle = false;
-        UnlockStorageRoomPuzzle = false;
-        SSLStripPuzzle = false;
-        PacketSnifferPuzzle = false;
-        UnlockManagersOfficePuzzle = false;
         DisableManagersSeecurityProtectionPuzzle = false;
         PhishingPuzzle = false;
         VirusDisablesProtectionPuzzle = false;

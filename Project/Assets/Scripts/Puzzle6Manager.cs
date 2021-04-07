@@ -167,7 +167,7 @@ public class Puzzle6Manager : MonoBehaviour
         //More sanity checking
         if (gameController != null)
         {
-            if (gameController.GetComponent<GameController>().PhishingResponse)
+            if (gameController.GetComponent<GameController>().PhishingResponse && gameController.GetComponent<GameController>().PhishingPuzzle)
             {
                 //Load phishing response
                 XmlSerializer ser = new XmlSerializer(typeof(EmailInbox.Message));
