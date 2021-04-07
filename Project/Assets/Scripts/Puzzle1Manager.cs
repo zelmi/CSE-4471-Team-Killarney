@@ -10,7 +10,6 @@ public class Puzzle1Manager : MonoBehaviour
     public TMP_InputField email;
     public TMP_InputField password;
 
-    //Probably should be private readonly, but we still need to figure out the final password, so leave public to change and test in Unity for now
     public string expectedEmail;
     public string expectedPassword;
 

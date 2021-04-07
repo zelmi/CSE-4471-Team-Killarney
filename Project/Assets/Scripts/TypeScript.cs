@@ -16,7 +16,6 @@ public class TypeScript : MonoBehaviour
 		story = txt.text;
 		txt.text = "";
 
-		// TODO: add optional delay when to start
 		StartCoroutine ("PlayText");
 	}
 

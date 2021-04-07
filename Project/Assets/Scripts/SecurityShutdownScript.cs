@@ -10,7 +10,6 @@ public class SecurityShutdownScript : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DisableManagersSeecurityProtectionPuzzle = true;
         PuzzleSceneManager.ExitPuzzle();
-        // Change gamecontroller flag
     }
 
     public void OnClickCancel()
