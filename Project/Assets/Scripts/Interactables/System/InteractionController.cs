@@ -38,6 +38,8 @@ public class InteractionController : MonoBehaviour
         Ray _ray = new Ray(p_cam.transform.position,p_cam.transform.forward);
         RaycastHit hitInfo;
 
+        //look straight ahead (with some wiggle room) for an interactable object
+
         bool hit = Physics.SphereCast(_ray, rayRadius, out hitInfo, rayDistance);//, interactableLayer);
 
         if(hit){
@@ -45,13 +47,16 @@ public class InteractionController : MonoBehaviour
 
             if(_interactable != null && _interactable.IsInteractable){
                 if(interactionData.IsEmpty() || !interactionData.IsSameObj(_interactable)){
+                    //If there is a hit and the object hit is not already in controller, update the item in the controller
                     interactionData.Interactable = _interactable;
                     hoverUIController.SetHoverMessage(interactionData.Interactable.HoverMessage);
                 } else {
-                    hoverUIController.SetHoverMessage(interactionData.Interactable.HoverMessage);
+                    //Ensures that hover message is up to date
+                    hoverUIController.SetHoverMessage(interactionData.Interactable.HoverMessage); 
                 }
             }
         } else {
+            //if there is no hit, reset
             interactionData.Reset();
             hoverUIController.ResetUI();
         }
@@ -60,6 +65,7 @@ public class InteractionController : MonoBehaviour
     }
 
     private void CheckForInteractionInput(){
+        //on press, interact
         if(!interactionData.IsEmpty()){
             if(interactionData.Interactable.IsInteractable){
                 if(interactionInputData.InteractPress){
